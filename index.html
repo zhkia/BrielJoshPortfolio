@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctolero Briel Josh L. — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at 30% 30%, #3b0a0a, #120000);
+      --accent: #ff4d4d;
+      --accent2: #ff1a75;
+      --text: #ffffff;
+      --muted: #ffb3b3;
+      --radius: 20px;
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 50px;
+      text-align: center;
+      max-width: 950px;
+      width: 100%;
+      backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px rgba(255, 77, 77, 0.4);
+    }
+
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1.2px;
+      text-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+    }
+
+    .name {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff4d4d, #ff1a75);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(255, 77, 77, 0.8);
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { text-shadow: 0 0 15px rgba(255, 77, 77, 0.4); }
+      to { text-shadow: 0 0 35px rgba(255, 26, 117, 0.8); }
+    }
+
+    p.intro {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .profile {
+      margin: 25px auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      padding: 8px;
+      box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 5px solid #1a0000;
+      object-fit: cover;
+    }
+
+    .profile:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 35px rgba(255, 77, 77, 0.8);
+    }
+
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      color: var(--accent);
+      margin: 40px 0 20px;
+      font-size: 2rem;
+      text-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 90px;
+      height: 3px;
+      background: var(--accent2);
+      margin: 10px auto 0;
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(255, 26, 117, 0.6);
+    }
+
+    .hobbies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .hobby {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .hobby:hover {
+      transform: translateY(-6px);
+      background: linear-gradient(135deg, rgba(255, 77, 77, 0.15), rgba(255, 26, 117, 0.1));
+      box-shadow: 0 10px 30px rgba(255, 77, 77, 0.5);
+    }
+
+    .hobby-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: var(--accent);
+      text-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .hobby:hover .hobby-icon {
+      color: var(--accent2);
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    .hobby-title {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+
+    .hobby-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 6px;
+    }
+
+    .website-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 16px 30px;
+      border-radius: 50px;
+      margin-top: 50px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 0 25px rgba(255, 77, 77, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .website-link img {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .website-link:hover {
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(255, 26, 117, 0.6);
+    }
+
+    .website-link:hover img {
+      transform: scale(1.2);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 25px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .name {
+        font-size: 2.2rem;
+      }
+      .hobby-title {
+        font-size: 1.05rem;
+      }
+      .profile {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .name {
+        font-size: 1.8rem;
+      }
+      p.intro {
+        font-size: 1rem;
+      }
+      .profile {
+        width: 130px;
+        height: 130px;
+      }
+      .website-link {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+      .website-link img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to My Portfolio</h1>
+    <p class="intro">Hi! I’m <span class="name">Doctolero Briel Josh L.</span> — and this page represents who I am and what I’m passionate about.</p>
+
+    <div class="profile">
+      <img src="images/Josh.jpg" alt="Profile picture of Doctolero Briel Josh L.">
+    </div>
+
+    <h2>My Hobbies & Interests</h2>
+
+    <div class="hobbies">
+      <div class="hobby">
+        <div class="hobby-icon">🏀</div>
+        <div class="hobby-title">Playing Basketball</div>
+        <div class="hobby-desc">I love staying active and improving my game on the court.</div>
+      </div>
+
+      <div class="hobby">
+        <div class="hobby-icon">🎧</div>
+        <div class="hobby-title">Listening to Music</div>
+        <div class="hobby-desc">Music helps me focus, relax, and express emotions creatively.</div>
+      </div>
+
+      <div class="hobby">
+        <div class="hobby-icon">💻</div>
+        <div class="hobby-title">Coding</div>
+        <div class="hobby-desc">Learning new technologies and building creative digital projects.</div>
+      </div>
+
+      <div class="hobby">
+        <div class="hobby-icon">🎬</div>
+        <div class="hobby-title">Watching Movies</div>
+        <div class="hobby-desc">I enjoy movies that tell meaningful stories and inspire imagination.</div>
+      </div>
+
+      <div class="hobby">
+        <div class="hobby-icon">🏍️</div>
+        <div class="hobby-title">Riding Motorcycles</div>
+        <div class="hobby-desc">Riding gives me freedom, excitement, and a sense of adventure.</div>
+      </div>
+
+      <div class="hobby">
+        <div class="hobby-icon">🌱</div>
+        <div class="hobby-title">Exploring New Skills</div>
+        <div class="hobby-desc">I constantly challenge myself to learn and grow in different areas.</div>
+      </div>
+    </div>
+
+    <a class="website-link" href="https://www.w3schools.com/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/W3Schools_logo.svg" alt="W3Schools logo">
+      Visit My Favorite Website: W3Schools
+    </a>
+  </div>
+
+</body>
+</html>
